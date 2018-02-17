@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -49,6 +51,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
 
 
+
+
+
+
         ImageView iconView = (ImageView) listItemView.findViewById(R.id.list_item_icon);
         // Get the image resource ID from the current AndroidFlavor object and
         // set the image to iconView
@@ -74,8 +80,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         int color = ContextCompat.getColor(getContext(),mColorsResourceId);
 
-        textContainer.setBackgroundColor(color);    
+        textContainer.setBackgroundColor(color);
 
+        ImageView playButtonImageView = (ImageView) listItemView.findViewById(R.id.playButtonImageView);
+        playButtonImageView.setBackgroundColor(color);
+
+        LinearLayout imageLayout = (LinearLayout) listItemView.findViewById(R.id.imageLayout);
+        imageLayout.setBackgroundColor(color);
+
+        LinearLayout homeLayout = (LinearLayout) listItemView.findViewById(R.id.homeLayout);
+        homeLayout.setBackgroundColor(color);
 
 
 
